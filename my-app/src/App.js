@@ -14,13 +14,17 @@ class App extends Component {
     };
   }
 
-  // addToInput = val => {
-  //   this.setState({ input: this.state.input + val });
-  // };
+  addToInput = val => {
+    this.setState({ input: this.state.input + val });
+  };
 
-  // handleEqual = () => {
-  //   this.setState({ input: math.eval(this.state.input) });
-  // };
+  handleEqual = () => {
+    this.setState({ input: math.evaluate(this.state.input) });
+  };
+
+  addXToInput = () => {
+    this.setState({ input: this.state.input + '*' });
+  };
 
   render() {
     return (
@@ -37,7 +41,7 @@ class App extends Component {
             <Button handleClick={this.addToInput}>4</Button>
             <Button handleClick={this.addToInput}>5</Button>
             <Button handleClick={this.addToInput}>6</Button>
-            <Button handleClick={this.addToInput}>X</Button>
+            <Button handleClick={this.addXToInput}>X</Button>
           </div>
           <div className="row">
             <Button handleClick={this.addToInput}>1</Button>
